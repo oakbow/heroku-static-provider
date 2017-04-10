@@ -2,6 +2,7 @@
 
 Static site provider for Heroku.
 
+[![Heroku Deploy](https://www.herokucdn.com/deploy/button.png)](https://heroku.com/deploy?template=https://github.com/oakbow/heroku-static-provider)
 
 ## Installation
 
