@@ -5,36 +5,31 @@
     "static",
     "site"
   ],
-  "website": "https://github.com/nulltask/heroku-static-provider",
-  "repository": "https://github.com/nulltask/heroku-static-provider",
+  "website": "https://github.com/oakbow/heroku-static-provider",
+  "repository": "https://github.com/oakbow/heroku-static-provider",
+  "logo": "https://small-sharp-tool.com/logo.svg",
   "success_url": "/",
-  "scripts": {
-  },
   "env": {
     "USER": {
-      "description": "The number of processes to run.",
-      "value": ""
+      "description": "(optional) The username of Basic Auth.",
+      "value": "",
       "required": false
     },
     "PASS": {
-      "description": "The number of processes to run.",
-      "value": ""
+      "description": "(optional) The password of Basic Auth.",
+      "value": "",
       "required": false
     }
   },
   "formation": {
     "web": {
-      "quantity": 2,
-      "size": "Performance-M"
+      "quantity": 1,
+      "size": "free"
     }
   },
   "image": "heroku/ruby",
   "addons": [
     "papertrail:choklad",
-    {
-      "plan": "mongolab:shared-single-small",
-      "as": "MONGO"
-    },
     {
       "plan": "heroku-postgresql",
       "options": {
@@ -44,7 +39,7 @@
   ],
   "buildpacks": [
     {
-      "url": "https://github.com/stomita/heroku-buildpack-phantomjs"
+      "url": "heroku/nodejs"
     }
   ]
 }
