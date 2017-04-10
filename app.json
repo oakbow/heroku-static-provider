@@ -1,0 +1,50 @@
+{
+  "name": "Heroku Static Provider",
+  "description": "Static site provider for Heroku.",
+  "keywords": [
+    "static",
+    "site"
+  ],
+  "website": "https://github.com/nulltask/heroku-static-provider",
+  "repository": "https://github.com/nulltask/heroku-static-provider",
+  "success_url": "/",
+  "scripts": {
+  },
+  "env": {
+    "USER": {
+      "description": "The number of processes to run.",
+      "value": ""
+      "required": false
+    },
+    "PASS": {
+      "description": "The number of processes to run.",
+      "value": ""
+      "required": false
+    }
+  },
+  "formation": {
+    "web": {
+      "quantity": 2,
+      "size": "Performance-M"
+    }
+  },
+  "image": "heroku/ruby",
+  "addons": [
+    "papertrail:choklad",
+    {
+      "plan": "mongolab:shared-single-small",
+      "as": "MONGO"
+    },
+    {
+      "plan": "heroku-postgresql",
+      "options": {
+        "version": "9.5"
+      }
+    }
+  ],
+  "buildpacks": [
+    {
+      "url": "https://github.com/stomita/heroku-buildpack-phantomjs"
+    }
+  ]
+}
